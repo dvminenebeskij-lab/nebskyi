@@ -198,17 +198,16 @@ function Index() {
         <div className="grid gap-16 md:grid-cols-[0.9fr_1.1fr]">
           <Reveal>
             <p className="font-mono text-[11px] tracking-[0.28em] text-azure uppercase">
-              О студии
+              Про студію
             </p>
           </Reveal>
           <div>
             <Reveal delay={120}>
               <p className="font-display text-[clamp(1.7rem,3.4vw,2.9rem)] leading-[1.25]">
-                Сайт — это не страница. Это первое рукопожатие бренда: вес шрифта, тишина
-                между блоками, скорость отклика.{" "}
+                Ми заснували Nebskyi у 2026 році. Клієнтських проєктів ще немає — усе, що ви
+                бачите нижче, ми зробили самі, щоб показати рівень роботи.{" "}
                 <span className="text-muted-foreground">
-                  Мы работаем маленькой командой и берём ровно столько, сколько можем сделать
-                  безупречно.
+                  Тому зараз беремо перші замовлення й приділяємо кожному максимум часу.
                 </span>
               </p>
             </Reveal>
@@ -219,7 +218,7 @@ function Index() {
       {/* Services */}
       <section id="services" className="mx-auto max-w-[1240px] px-6 pb-32">
         <Reveal>
-          <h2 className="font-display text-[clamp(2rem,4.5vw,3.4rem)]">Что мы делаем</h2>
+          <h2 className="font-display text-[clamp(2rem,4.5vw,3.4rem)]">Що ми робимо</h2>
         </Reveal>
         <div className="mt-14">
           {services.map((s, i) => (
@@ -255,14 +254,20 @@ function Index() {
         />
         <div className="relative mx-auto max-w-[1240px] px-6">
           <Reveal>
-            <h2 className="font-display text-[clamp(2rem,4.5vw,3.4rem)]">Избранные работы</h2>
+            <h2 className="font-display text-[clamp(2rem,4.5vw,3.4rem)]">Наші роботи</h2>
+          </Reveal>
+          <Reveal delay={100}>
+            <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
+              Це власні проєкти студії, зроблені для портфоліо — на них видно, як ми працюємо з
+              дизайном, структурою та швидкістю.
+            </p>
           </Reveal>
           <div className="mt-14 grid gap-px bg-border md:grid-cols-2">
             {works.map((w, i) => (
               <Reveal key={w.name} delay={i * 120}>
                 <article className="group relative h-full overflow-hidden bg-background p-10 transition-colors duration-700 hover:bg-card md:p-14">
                   <span className="font-mono text-[10px] tracking-[0.26em] text-muted-foreground uppercase">
-                    {w.kind} · {w.year}
+                    {w.kind}
                   </span>
                   <h3 className="mt-6 font-display text-4xl transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1 md:text-5xl">
                     {w.name}
@@ -279,7 +284,7 @@ function Index() {
       {/* Process */}
       <section id="process" className="mx-auto max-w-[1240px] px-6 pb-32">
         <Reveal>
-          <h2 className="font-display text-[clamp(2rem,4.5vw,3.4rem)]">Как проходит работа</h2>
+          <h2 className="font-display text-[clamp(2rem,4.5vw,3.4rem)]">Як ми працюємо</h2>
         </Reveal>
         <div className="mt-14 grid gap-10 md:grid-cols-4">
           {steps.map((s, i) => (
@@ -299,22 +304,22 @@ function Index() {
         <div className="mx-auto max-w-[1240px] px-6">
           <Reveal>
             <p className="font-mono text-[11px] tracking-[0.28em] text-azure uppercase">
-              Свободны с сентября
+              Приймаємо нові проєкти
             </p>
           </Reveal>
           <Reveal delay={140}>
             <h2 className="mt-8 font-display text-[clamp(2.4rem,7vw,5.6rem)] leading-[1]">
-              Расскажите
+              Розкажіть
               <br />
-              <span className="italic text-muted-foreground">о вашем проекте</span>
+              <span className="italic text-muted-foreground">про свій проєкт</span>
             </h2>
           </Reveal>
           <Reveal delay={280}>
             <a
-              href="mailto:studio@obsidian.ru"
+              href="mailto:hello@nebskyi.com"
               className="group mt-14 inline-flex items-center gap-5 border-b border-azure/40 pb-3 font-display text-2xl transition-colors duration-500 hover:border-azure md:text-3xl"
             >
-              studio@obsidian.ru
+              hello@nebskyi.com
               <span className="inline-block transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-3">
                 →
               </span>
@@ -322,7 +327,8 @@ function Index() {
           </Reveal>
           <Reveal delay={400}>
             <p className="mt-10 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              Или напишите в Telegram — ответим в течение дня и предложим время для звонка.
+              Напишіть кілька слів про задачу — відповімо протягом дня й запропонуємо час для
+              розмови.
             </p>
           </Reveal>
         </div>
@@ -330,8 +336,8 @@ function Index() {
 
       <footer className="border-t border-border py-10">
         <div className="mx-auto flex max-w-[1240px] flex-col gap-4 px-6 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
-          <span className="font-mono tracking-[0.22em] uppercase">Обсидиан · Москва</span>
-          <span>© {new Date().getFullYear()} Все права защищены</span>
+          <span className="font-mono tracking-[0.22em] uppercase">Nebskyi · Студія</span>
+          <span>© {new Date().getFullYear()} Усі права захищені</span>
         </div>
       </footer>
     </div>
