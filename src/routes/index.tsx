@@ -235,7 +235,7 @@ function Index() {
           loading="lazy"
           width={1200}
           height={800}
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.07] mix-blend-screen"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.035] mix-blend-screen"
         />
         <div className="relative mx-auto max-w-[1240px] px-6">
           <Reveal>
