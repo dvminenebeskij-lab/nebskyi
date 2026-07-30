@@ -114,12 +114,12 @@ function Index() {
           </nav>
           <a
             href="#contact"
-            className="group relative overflow-hidden border border-brass/60 px-5 py-2.5 text-xs tracking-[0.2em] text-brass uppercase transition-colors duration-500"
+            className="group relative overflow-hidden border border-azure/60 px-5 py-2.5 text-xs tracking-[0.2em] text-azure uppercase transition-colors duration-500"
           >
             <span className="relative z-10 transition-colors duration-500 group-hover:text-ink-deep">
               Обсудить
             </span>
-            <span className="absolute inset-0 -translate-y-full bg-brass transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0" />
+            <span className="absolute inset-0 -translate-y-full bg-azure transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0" />
           </a>
         </div>
       </header>
@@ -137,7 +137,7 @@ function Index() {
 
         <div className="relative mx-auto w-full max-w-[1240px] px-6 pb-20">
           <Reveal delay={100}>
-            <span className="font-mono text-[11px] tracking-[0.32em] text-brass uppercase">
+            <span className="font-mono text-[11px] tracking-[0.32em] text-azure uppercase">
               Студия веб-разработки · с 2016 года
             </span>
           </Reveal>
@@ -145,7 +145,7 @@ function Index() {
             <h1 className="mt-8 max-w-4xl font-display text-[clamp(2.9rem,8vw,7rem)] leading-[0.94] tracking-[-0.02em]">
               Сайты, которые
               <br />
-              <span className="italic text-brass-gradient">носят как вещь</span>
+              <span className="italic text-azure-gradient">носят как вещь</span>
             </h1>
           </Reveal>
           <Reveal delay={420}>
@@ -164,7 +164,7 @@ function Index() {
                 ["6", "клиентов в год"],
               ].map(([v, l]) => (
                 <div key={l}>
-                  <div className="font-display text-4xl text-brass-soft">{v}</div>
+                  <div className="font-display text-4xl text-azure-soft">{v}</div>
                   <div className="mt-1 font-mono text-[10px] tracking-[0.24em] text-muted-foreground uppercase">
                     {l}
                   </div>
@@ -184,7 +184,7 @@ function Index() {
                 (b) => (
                   <span key={b} className="flex items-center gap-14">
                     {b}
-                    <span className="h-1 w-1 rounded-full bg-brass" />
+                    <span className="h-1 w-1 rounded-full bg-azure" />
                   </span>
                 ),
               )}
@@ -197,7 +197,7 @@ function Index() {
       <section className="mx-auto max-w-[1240px] px-6 py-32">
         <div className="grid gap-16 md:grid-cols-[0.9fr_1.1fr]">
           <Reveal>
-            <p className="font-mono text-[11px] tracking-[0.28em] text-brass uppercase">
+            <p className="font-mono text-[11px] tracking-[0.28em] text-azure uppercase">
               О студии
             </p>
           </Reveal>
@@ -227,7 +227,7 @@ function Index() {
               <Rule delay={i * 80} />
               <Reveal delay={i * 90}>
                 <div className="group grid gap-6 py-9 transition-colors duration-500 md:grid-cols-[80px_1fr_1fr]">
-                  <span className="font-mono text-xs text-brass">{s.n}</span>
+                  <span className="font-mono text-xs text-azure">{s.n}</span>
                   <h3 className="font-display text-2xl transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-2 md:text-3xl">
                     {s.title}
                   </h3>
@@ -268,7 +268,7 @@ function Index() {
                     {w.name}
                   </h3>
                   <p className="mt-3 text-sm text-muted-foreground">{w.note}</p>
-                  <span className="mt-10 block h-px w-0 bg-brass transition-all duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:w-full" />
+                  <span className="mt-10 block h-px w-0 bg-azure transition-all duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:w-full" />
                 </article>
               </Reveal>
             ))}
@@ -285,7 +285,7 @@ function Index() {
           {steps.map((s, i) => (
             <Reveal key={s.t} delay={i * 140}>
               <div className="relative pt-8">
-                <span className="absolute top-0 left-0 h-2 w-2 rotate-45 bg-brass" />
+                <span className="absolute top-0 left-0 h-2 w-2 rotate-45 bg-azure" />
                 <h3 className="font-display text-2xl">{s.t}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.d}</p>
               </div>
@@ -298,7 +298,7 @@ function Index() {
       <section id="contact" className="relative overflow-hidden border-t border-border py-32">
         <div className="mx-auto max-w-[1240px] px-6">
           <Reveal>
-            <p className="font-mono text-[11px] tracking-[0.28em] text-brass uppercase">
+            <p className="font-mono text-[11px] tracking-[0.28em] text-azure uppercase">
               Свободны с сентября
             </p>
           </Reveal>
@@ -312,7 +312,7 @@ function Index() {
           <Reveal delay={280}>
             <a
               href="mailto:studio@obsidian.ru"
-              className="group mt-14 inline-flex items-center gap-5 border-b border-brass/40 pb-3 font-display text-2xl transition-colors duration-500 hover:border-brass md:text-3xl"
+              className="group mt-14 inline-flex items-center gap-5 border-b border-azure/40 pb-3 font-display text-2xl transition-colors duration-500 hover:border-azure md:text-3xl"
             >
               studio@obsidian.ru
               <span className="inline-block transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-3">
