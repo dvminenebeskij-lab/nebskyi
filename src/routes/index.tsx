@@ -7,16 +7,16 @@ import paperTexture from "@/assets/texture-paper.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nebskyi — студія розробки сайтів" },
+      { title: "Nebskyi — агенство розробки сайтів" },
       {
         name: "description",
         content:
-          "Nebskyi — нова студія розробки сайтів: дизайн, розробка та підтримка. Дивіться приклади робіт і напишіть нам.",
+          "Nebskyi — нове агенство розробки сайтів: дизайн, розробка та підтримка. Дивіться приклади робіт і напишіть нам.",
       },
-      { property: "og:title", content: "Nebskyi — студія розробки сайтів" },
+      { property: "og:title", content: "Nebskyi — агенство розробки сайтів" },
       {
         property: "og:description",
-        content: "Дизайн, розробка та підтримка сайтів. Приклади робіт і зв'язок зі студією.",
+        content: "Дизайн, розробка та підтримка сайтів. Приклади робіт і зв'язок з агенством.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -28,23 +28,38 @@ export const Route = createFileRoute("/")({
 const services = [
   {
     n: "01",
-    title: "Сайт-візитівка",
-    body: "Одна сторінка або невеликий сайт: про компанію, послуги, контакти та форма звернення.",
+    title: "Сайти для ресторанів",
+    body: "Меню, бронювання столиків, доставка та контакти — все, що потрібно ресторану.",
   },
   {
     n: "02",
-    title: "Дизайн",
-    body: "Малюємо кожен екран під ваш бренд: шрифти, кольори, структура. Без готових шаблонів.",
+    title: "Сайти для сервісів",
+    body: "Запис на послуги, тарифи, калькулятори, форми зворотного зв'язку.",
   },
   {
     n: "03",
-    title: "Розробка",
-    body: "Пишемо код вручну. Сайт швидко відкривається і зручно виглядає на телефоні та комп'ютері.",
+    title: "Сайти для агенцій",
+    body: "Портфоліо, послуги, кейси та сторінка контактів для вашої агенції.",
   },
   {
     n: "04",
+    title: "Сайти для бізнесів",
+    body: "Від магазинів до виробництв: зрозумілі сайти, які допомагають продавати.",
+  },
+  {
+    n: "05",
+    title: "Дизайн",
+    body: "Малюємо кожну сторінку під ваш бренд. Без готових шаблонів.",
+  },
+  {
+    n: "06",
+    title: "Розробка",
+    body: "Чистий код, швидке завантаження, зручний вигляд на телефоні та комп'ютері.",
+  },
+  {
+    n: "07",
     title: "Підтримка",
-    body: "Після запуску допомагаємо: оновлюємо тексти, додаємо сторінки, стежимо за роботою сайту.",
+    body: "Оновлюємо тексти, додаємо сторінки, стежимо за роботою сайту.",
   },
 ];
 
@@ -56,7 +71,7 @@ const works = [
   },
   {
     name: "Linea",
-    kind: "Концепт · студія інтер'єрів",
+    kind: "Концепт · дизайн інтер'єрів",
     note: "Портфоліо проєктів і сторінка послуг",
   },
   {
@@ -72,10 +87,10 @@ const works = [
 ];
 
 const steps = [
-  { t: "Розмова", d: "30–45 хвилин про задачу, терміни й бюджет." },
-  { t: "Структура", d: "Складаємо план сторінок і тексти." },
-  { t: "Дизайн", d: "Показуємо всі екрани до початку розробки." },
-  { t: "Запуск", d: "Збираємо сайт, наповнюємо й вмикаємо." },
+  { t: "Розмова", d: "Уточнюємо задачу, ціну, терміни та всі деталі." },
+  { t: "Розробка", d: "Клієнт чекає, а ми робимо сайт." },
+  { t: "Перевірка", d: "Показуємо сайт, обговорюємо, виправляємо, якщо треба." },
+  { t: "Запуск", d: "Все добре — вмикаємо сайт." },
 ];
 
 function Index() {
@@ -138,20 +153,20 @@ function Index() {
         <div className="relative mx-auto w-full max-w-[1240px] px-6 pb-20">
           <Reveal delay={100}>
             <span className="font-mono text-[11px] tracking-[0.32em] text-azure uppercase">
-              Студія розробки сайтів · 2026
+              Агенство розробки сайтів · 2026
             </span>
           </Reveal>
           <Reveal delay={260}>
             <h1 className="mt-8 max-w-4xl font-display text-[clamp(2.9rem,8vw,7rem)] leading-[0.94] tracking-[-0.02em]">
               Робимо сайти
               <br />
-              <span className="italic text-azure-gradient">спокійно й уважно</span>
+              <span className="italic text-azure-gradient">для вашого бізнесу</span>
             </h1>
           </Reveal>
           <Reveal delay={420}>
             <p className="mt-10 max-w-md text-[15px] leading-relaxed text-muted-foreground">
-              Nebskyi — нова студія. Ми щойно почали, тому беремо небагато проєктів і робимо
-              кожен уважно: від структури до запуску.
+              Nebskyi — нове агенство. Ми робимо сайти для ресторанів, сервісів, агенцій та інших
+              бізнесів: від структури до запуску.
             </p>
           </Reveal>
           <Reveal delay={560} className="mt-14">
@@ -160,7 +175,7 @@ function Index() {
               {[
                 ["2026", "рік заснування"],
                 ["4", "власні роботи"],
-                ["90+", "швидкість сайтів"],
+                ["1-3 сек", "завантаження сайту"],
                 ["1 день", "відповідь на запит"],
               ].map(([v, l]) => (
                 <div key={l}>
@@ -198,7 +213,7 @@ function Index() {
         <div className="grid gap-16 md:grid-cols-[0.9fr_1.1fr]">
           <Reveal>
             <p className="font-mono text-[11px] tracking-[0.28em] text-azure uppercase">
-              Про студію
+              Про агенство
             </p>
           </Reveal>
           <div>
@@ -207,7 +222,7 @@ function Index() {
                 Ми заснували Nebskyi у 2026 році. Клієнтських проєктів ще немає — усе, що ви
                 бачите нижче, ми зробили самі, щоб показати рівень роботи.{" "}
                 <span className="text-muted-foreground">
-                  Тому зараз беремо перші замовлення й приділяємо кожному максимум часу.
+                  Тому зараз беремо перші замовлення й приділяємо кожному багато уваги.
                 </span>
               </p>
             </Reveal>
@@ -258,7 +273,7 @@ function Index() {
           </Reveal>
           <Reveal delay={100}>
             <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
-              Це власні проєкти студії, зроблені для портфоліо — на них видно, як ми працюємо з
+              Це власні проєкти агенства, зроблені для портфоліо — на них видно, як ми працюємо з
               дизайном, структурою та швидкістю.
             </p>
           </Reveal>
@@ -316,10 +331,10 @@ function Index() {
           </Reveal>
           <Reveal delay={280}>
             <a
-              href="mailto:hello@nebskyi.com"
+              href="mailto:dvminenebeskij@gmail.com"
               className="group mt-14 inline-flex items-center gap-5 border-b border-azure/40 pb-3 font-display text-2xl transition-colors duration-500 hover:border-azure md:text-3xl"
             >
-              hello@nebskyi.com
+              dvminenebeskij@gmail.com
               <span className="inline-block transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-3">
                 →
               </span>
@@ -336,7 +351,7 @@ function Index() {
 
       <footer className="border-t border-border py-10">
         <div className="mx-auto flex max-w-[1240px] flex-col gap-4 px-6 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
-          <span className="font-mono tracking-[0.22em] uppercase">Nebskyi · Студія</span>
+          <span className="font-mono tracking-[0.22em] uppercase">Nebskyi · Агенство</span>
           <span>© {new Date().getFullYear()} Усі права захищені</span>
         </div>
       </footer>

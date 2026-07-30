@@ -77,14 +77,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Nebskyi — студія розробки сайтів" },
+      { title: "Nebskyi — агенство розробки сайтів" },
       {
         name: "description",
         content:
-          "Nebskyi — нова студія розробки сайтів. Дизайн, розробка та підтримка сайтів під ключ.",
+          "Nebskyi — нове агенство розробки сайтів. Дизайн, розробка та підтримка сайтів під ключ.",
       },
       { name: "author", content: "Nebskyi" },
-      { property: "og:title", content: "Nebskyi — студія розробки сайтів" },
+      { property: "og:title", content: "Nebskyi — агенство розробки сайтів" },
       {
         property: "og:description",
         content: "Робимо зрозумілі та швидкі сайти: дизайн, розробка, підтримка.",
