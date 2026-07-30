@@ -82,10 +82,10 @@
   --border: oklch(0.93 0.012 80 / 14%);
   --input: oklch(0.93 0.012 80 / 18%);
   --ring: oklch(0.78 0.11 78);
-  --brass: oklch(0.78 0.11 78);
-  --brass-soft: oklch(0.86 0.07 84);
+  --azure: oklch(0.78 0.11 78);
+  --azure-soft: oklch(0.86 0.07 84);
   --ink-deep: oklch(0.12 0.006 60);
-  --gradient-brass: linear-gradient(100deg, oklch(0.86 0.07 84), oklch(0.72 0.12 70));
+  --gradient-azure: linear-gradient(100deg, oklch(0.86 0.07 84), oklch(0.72 0.12 70));
   --gradient-veil: linear-gradient(
     180deg,
     transparent,
@@ -156,7 +156,7 @@
   }
 
   ::selection {
-    background: var(--brass);
+    background: var(--azure);
     color: var(--ink-deep);
   }
 
@@ -166,8 +166,8 @@
 }
 
 @theme inline {
-  --color-brass: var(--brass);
-  --color-brass-soft: var(--brass-soft);
+  --color-azure: var(--azure);
+  --color-azure-soft: var(--azure-soft);
   --color-ink-deep: var(--ink-deep);
   --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Instrument Serif", ui-serif, Georgia, serif;
@@ -254,8 +254,8 @@
   animation: marquee-x 38s linear infinite;
 }
 
-@utility text-brass-gradient {
-  background: var(--gradient-brass);
+@utility text-azure-gradient {
+  background: var(--gradient-azure);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -273,7 +273,7 @@
     bottom: -4px;
     height: 1px;
     width: 100%;
-    background: var(--brass);
+    background: var(--azure);
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.6s var(--ease-silk);
