@@ -99,17 +99,17 @@ function Index() {
       >
         <div className="mx-auto flex max-w-[1240px] items-center justify-between px-6">
           <a href="#top" className="font-display text-xl tracking-[0.28em] uppercase">
-            Обсидиан
+            Nebskyi
           </a>
           <nav className="hidden items-center gap-10 text-sm md:flex">
             <a href="#services" className="link-quiet">
-              Услуги
+              Послуги
             </a>
             <a href="#work" className="link-quiet">
-              Работы
+              Роботи
             </a>
             <a href="#process" className="link-quiet">
-              Процесс
+              Процес
             </a>
           </nav>
           <a
@@ -117,7 +117,7 @@ function Index() {
             className="group relative overflow-hidden border border-azure/60 px-5 py-2.5 text-xs tracking-[0.2em] text-azure uppercase transition-colors duration-500"
           >
             <span className="relative z-10 transition-colors duration-500 group-hover:text-ink-deep">
-              Обсудить
+              Написати
             </span>
             <span className="absolute inset-0 -translate-y-full bg-azure transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0" />
           </a>
@@ -128,7 +128,7 @@ function Index() {
       <section id="top" className="relative flex min-h-screen items-end overflow-hidden">
         <img
           src={heroImage}
-          alt="Полированная чёрная плита в тёплом свете"
+          alt="М'яке блакитне світло на темній поверхні"
           width={1408}
           height={1008}
           className="drifting absolute inset-0 h-full w-full object-cover opacity-70"
@@ -138,33 +138,33 @@ function Index() {
         <div className="relative mx-auto w-full max-w-[1240px] px-6 pb-20">
           <Reveal delay={100}>
             <span className="font-mono text-[11px] tracking-[0.32em] text-azure uppercase">
-              Студия веб-разработки · с 2016 года
+              Студія розробки сайтів · 2026
             </span>
           </Reveal>
           <Reveal delay={260}>
             <h1 className="mt-8 max-w-4xl font-display text-[clamp(2.9rem,8vw,7rem)] leading-[0.94] tracking-[-0.02em]">
-              Сайты, которые
+              Робимо сайти
               <br />
-              <span className="italic text-azure-gradient">носят как вещь</span>
+              <span className="italic text-azure-gradient">спокійно й уважно</span>
             </h1>
           </Reveal>
           <Reveal delay={420}>
             <p className="mt-10 max-w-md text-[15px] leading-relaxed text-muted-foreground">
-              Мы делаем немного проектов в год. Каждый — вручную, от смысла до последнего
-              миллисекундного перехода.
+              Nebskyi — нова студія. Ми щойно почали, тому беремо небагато проєктів і робимо
+              кожен уважно: від структури до запуску.
             </p>
           </Reveal>
           <Reveal delay={560} className="mt-14">
             <Rule delay={700} />
             <div className="grid grid-cols-2 gap-8 pt-6 md:grid-cols-4">
               {[
-                ["68", "проектов"],
-                ["10", "лет практики"],
-                ["94", "средний PageSpeed"],
-                ["6", "клиентов в год"],
+                ["2026", "рік заснування"],
+                ["4", "власні роботи"],
+                ["90+", "швидкість сайтів"],
+                ["1 день", "відповідь на запит"],
               ].map(([v, l]) => (
                 <div key={l}>
-                  <div className="font-display text-4xl text-azure-soft">{v}</div>
+                  <div className="font-display text-3xl text-azure-soft md:text-4xl">{v}</div>
                   <div className="mt-1 font-mono text-[10px] tracking-[0.24em] text-muted-foreground uppercase">
                     {l}
                   </div>
@@ -180,7 +180,7 @@ function Index() {
         <div className="marquee-track flex w-max gap-14 font-display text-2xl whitespace-nowrap text-muted-foreground/60">
           {Array.from({ length: 2 }).map((_, i) => (
             <span key={i} className="flex gap-14">
-              {["Nordveil", "Aurea Capital", "Château Mira", "Verre", "Solis", "Мануфактура №9"].map(
+              {["Aster", "Linea", "Marin", "Orbit", "Дизайн", "Розробка", "Підтримка"].map(
                 (b) => (
                   <span key={b} className="flex items-center gap-14">
                     {b}
