@@ -223,6 +223,298 @@
   }
 }
 
+@keyframes mono-spin {
+  from {
+    transform: rotateX(-9deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(-9deg) rotateY(360deg);
+  }
+}
+
+@keyframes mono-float {
+  0%,
+  100% {
+    transform: translate3d(0, -1.4%, 0);
+  }
+  50% {
+    transform: translate3d(0, 1.4%, 0);
+  }
+}
+
+@keyframes halo-breathe {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.62;
+    transform: scale(1.07);
+  }
+}
+
+@keyframes grid-breathe {
+  0%,
+  100% {
+    opacity: 0.5;
+    background-position:
+      0 0,
+      0 0;
+  }
+  50% {
+    opacity: 0.85;
+    background-position:
+      0 -14px,
+      14px 0;
+  }
+}
+
+@keyframes arch-sweep {
+  0% {
+    transform: translateY(-40%);
+    opacity: 0;
+  }
+  15%,
+  60% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(140%);
+    opacity: 0;
+  }
+}
+
+/* ---- Reveal variants: every block enters a little differently ---- */
+
+@utility veil-fade {
+  opacity: 0;
+  transition: opacity 1.5s var(--ease-silk);
+
+  &[data-shown="true"] {
+    opacity: 1;
+  }
+}
+
+@utility veil-mask {
+  opacity: 0;
+  clip-path: inset(0 0 100% 0);
+  transition:
+    opacity 1s var(--ease-silk),
+    clip-path 1.5s var(--ease-silk);
+
+  &[data-shown="true"] {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@utility veil-blur {
+  opacity: 0;
+  filter: blur(14px);
+  transform: translateY(10px) scale(0.995);
+  transition:
+    opacity 1.4s var(--ease-silk),
+    filter 1.4s var(--ease-silk),
+    transform 1.4s var(--ease-silk);
+
+  &[data-shown="true"] {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+@utility veil-left {
+  opacity: 0;
+  transform: translateX(-34px);
+  transition:
+    opacity 1.2s var(--ease-silk),
+    transform 1.3s var(--ease-silk);
+
+  &[data-shown="true"] {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@utility veil-right {
+  opacity: 0;
+  transform: translateX(34px);
+  transition:
+    opacity 1.2s var(--ease-silk),
+    transform 1.3s var(--ease-silk);
+
+  &[data-shown="true"] {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@utility veil-settle {
+  opacity: 0;
+  transform: translateY(-18px) scale(1.012);
+  transition:
+    opacity 1.2s var(--ease-silk),
+    transform 1.6s var(--ease-silk);
+
+  &[data-shown="true"] {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@utility veil-lift {
+  opacity: 0;
+  transform: translateY(46px) scale(0.985);
+  transform-origin: bottom;
+  transition:
+    opacity 1.3s var(--ease-silk),
+    transform 1.5s var(--ease-silk);
+
+  &[data-shown="true"] {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ---- Architectural background lines ---- */
+
+@utility arch-grid {
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in oklab, var(--azure) 22%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--azure) 16%, transparent) 1px,
+      transparent 1px
+    );
+  background-size:
+    128px 100%,
+    100% 128px;
+  opacity: 0.5;
+  mask-image: radial-gradient(120% 90% at 50% 40%, black 0%, transparent 78%);
+  animation: grid-breathe 26s ease-in-out infinite;
+  will-change: opacity, background-position;
+}
+
+@utility arch-sweep {
+  background: linear-gradient(
+    180deg,
+    transparent,
+    color-mix(in oklab, var(--azure-soft) 12%, transparent),
+    transparent
+  );
+  height: 45%;
+  animation: arch-sweep 22s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform, opacity;
+}
+
+/* ---- Cursor light ---- */
+
+.cursor-light {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  width: 46rem;
+  height: 46rem;
+  border-radius: 9999px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s var(--ease-silk);
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklab, var(--azure) 12%, transparent),
+    transparent 70%
+  );
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+
+@media (pointer: coarse) {
+  .cursor-light {
+    display: none;
+  }
+}
+
+/* ---- Glass monolith (CSS 3D) ---- */
+
+.monolith-stage {
+  position: absolute;
+  perspective: 1400px;
+  --mx: 0deg;
+  --my: 0deg;
+}
+
+.monolith-halo {
+  position: absolute;
+  inset: -28%;
+  border-radius: 9999px;
+  background: radial-gradient(
+    closest-side,
+    color-mix(in oklab, var(--azure) 26%, transparent),
+    transparent 72%
+  );
+  filter: blur(12px);
+  animation: halo-breathe 14s ease-in-out infinite;
+}
+
+.monolith-tilt {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform: rotateY(var(--mx)) rotateX(var(--my));
+  transition: transform 0.5s linear;
+  animation: mono-float 16s ease-in-out infinite;
+}
+
+.monolith {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  animation: mono-spin 68s linear infinite;
+  will-change: transform;
+}
+
+.mono-face {
+  position: absolute;
+  inset: 0;
+  border: 1px solid color-mix(in oklab, var(--azure-soft) 34%, transparent);
+  background: linear-gradient(
+    150deg,
+    color-mix(in oklab, var(--azure) 20%, transparent),
+    color-mix(in oklab, var(--ink-deep) 55%, transparent) 55%,
+    color-mix(in oklab, var(--azure-soft) 16%, transparent)
+  );
+  backdrop-filter: blur(3px);
+  box-shadow: inset 0 0 60px -20px color-mix(in oklab, var(--azure-soft) 40%, transparent);
+}
+
+.mono-f {
+  transform: translateZ(var(--mono-half, 70px));
+}
+.mono-b {
+  transform: rotateY(180deg) translateZ(var(--mono-half, 70px));
+}
+.mono-l {
+  transform: rotateY(-90deg) translateZ(var(--mono-half, 70px));
+}
+.mono-r {
+  transform: rotateY(90deg) translateZ(var(--mono-half, 70px));
+}
+.mono-t {
+  transform: rotateX(90deg) translateZ(var(--mono-cap, 150px));
+  opacity: 0.55;
+}
+.mono-bt {
+  transform: rotateX(-90deg) translateZ(var(--mono-cap, 150px));
+  opacity: 0.35;
+}
+
 @utility veil {
   opacity: 0;
   transform: translateY(28px);
