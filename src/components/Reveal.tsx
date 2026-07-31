@@ -26,15 +26,40 @@ export function useInView<T extends HTMLElement>(threshold = 0.2) {
   return { ref, shown };
 }
 
+export type RevealVariant =
+  | "rise"
+  | "fade"
+  | "mask"
+  | "unblur"
+  | "drift-left"
+  | "drift-right"
+  | "settle"
+  | "lift";
+
+const variantClass: Record<RevealVariant, string> = {
+  rise: "veil",
+  fade: "veil-fade",
+  mask: "veil-mask",
+  unblur: "veil-blur",
+  "drift-left": "veil-left",
+  "drift-right": "veil-right",
+  settle: "veil-settle",
+  lift: "veil-lift",
+};
+
 export function Reveal({
   children,
   delay = 0,
+  duration,
   className,
+  variant = "rise",
   as: As = "div",
 }: {
   children: ReactNode;
   delay?: number;
+  duration?: number;
   className?: string;
+  variant?: RevealVariant;
   as?: ElementType;
 }) {
   const { ref, shown } = useInView<HTMLDivElement>(0.15);
@@ -42,8 +67,11 @@ export function Reveal({
     <As
       ref={ref}
       data-shown={shown}
-      style={{ transitionDelay: `${delay}ms` }}
-      className={cn("veil", className)}
+      style={{
+        transitionDelay: `${delay}ms`,
+        ...(duration ? { transitionDuration: `${duration}ms` } : null),
+      }}
+      className={cn(variantClass[variant], className)}
     >
       {children}
     </As>
