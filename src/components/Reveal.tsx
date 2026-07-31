@@ -63,14 +63,28 @@ export function Reveal({
   as?: ElementType;
 }) {
   const { ref, shown } = useInView<HTMLDivElement>(0.15);
+  const style = {
+    transitionDelay: `${delay}ms`,
+    ...(duration ? { transitionDuration: `${duration}ms` } : null),
+  };
+
+  // clip-path on the observed node empties its intersection rect, so the
+  // masked layer lives on an inner element.
+  if (variant === "mask") {
+    return (
+      <As ref={ref} data-shown={shown} className={className}>
+        <div data-shown={shown} style={style} className="veil-mask">
+          {children}
+        </div>
+      </As>
+    );
+  }
+
   return (
     <As
       ref={ref}
       data-shown={shown}
-      style={{
-        transitionDelay: `${delay}ms`,
-        ...(duration ? { transitionDuration: `${duration}ms` } : null),
-      }}
+      style={style}
       className={cn(variantClass[variant], className)}
     >
       {children}
