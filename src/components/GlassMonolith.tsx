@@ -1,10 +1,16 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type CSSProperties } from "react";
 
 /**
  * Slowly rotating glass monolith — a pure CSS 3D object (no WebGL),
  * so it stays light and holds 60fps. Reacts subtly to pointer movement.
  */
-export function GlassMonolith({ className = "" }: { className?: string }) {
+export function GlassMonolith({
+  className = "",
+  style,
+}: {
+  className?: string;
+  style?: CSSProperties;
+}) {
   const stage = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -44,6 +50,7 @@ export function GlassMonolith({ className = "" }: { className?: string }) {
     <div
       ref={stage}
       aria-hidden
+      style={style}
       className={`monolith-stage pointer-events-none select-none ${className}`}
     >
       <div className="monolith-halo" />

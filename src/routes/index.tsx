@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Reveal, Rule } from "@/components/Reveal";
+import { ArchLines, CursorLight } from "@/components/Atmosphere";
+import { GlassMonolith } from "@/components/GlassMonolith";
 import heroImage from "@/assets/hero-azure.jpg";
 import paperTexture from "@/assets/texture-paper.jpg";
 
@@ -105,6 +107,7 @@ function Index() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
+      <CursorLight />
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-700 ${
           scrolled
@@ -148,28 +151,33 @@ function Index() {
           height={1008}
           className="drifting absolute inset-0 h-full w-full object-cover opacity-70"
         />
+        <ArchLines className="opacity-70" />
+        <GlassMonolith
+          className="right-[6vw] top-1/2 hidden h-[clamp(240px,34vh,380px)] w-[clamp(96px,9vw,150px)] -translate-y-[62%] opacity-90 md:block"
+          style={{ ["--mono-half" as string]: "clamp(48px,4.5vw,75px)" }}
+        />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,color-mix(in_oklab,var(--ink-deep)_75%,transparent)_0%,transparent_35%,color-mix(in_oklab,var(--ink-deep)_95%,transparent)_100%)]" />
 
         <div className="relative mx-auto w-full max-w-[1240px] px-6 pb-20">
-          <Reveal delay={100}>
+          <Reveal delay={100} variant="fade">
             <span className="font-mono text-[11px] tracking-[0.32em] text-azure uppercase">
               Агенство розробки сайтів · 2026
             </span>
           </Reveal>
-          <Reveal delay={260}>
+          <Reveal delay={260} variant="mask" duration={1700}>
             <h1 className="mt-8 max-w-4xl font-display text-[clamp(2.9rem,8vw,7rem)] leading-[0.94] tracking-[-0.02em]">
               Робимо сайти
               <br />
               <span className="italic text-azure-gradient">для вашого бізнесу</span>
             </h1>
           </Reveal>
-          <Reveal delay={420}>
+          <Reveal delay={480} variant="unblur">
             <p className="mt-10 max-w-md text-[15px] leading-relaxed text-muted-foreground">
               Nebskyi — нове агенство. Ми робимо сайти для ресторанів, сервісів, агенцій та інших
               бізнесів: від структури до запуску.
             </p>
           </Reveal>
-          <Reveal delay={560} className="mt-14">
+          <Reveal delay={640} variant="fade" className="mt-14">
             <Rule delay={700} />
             <div className="grid grid-cols-2 gap-8 pt-6 md:grid-cols-4">
               {[
@@ -177,13 +185,13 @@ function Index() {
                 ["4", "власні роботи"],
                 ["1-3 сек", "завантаження сайту"],
                 ["1 день", "відповідь на запит"],
-              ].map(([v, l]) => (
-                <div key={l}>
+              ].map(([v, l], i) => (
+                <Reveal key={l} variant="settle" delay={820 + i * 130}>
                   <div className="font-display text-3xl text-azure-soft md:text-4xl">{v}</div>
                   <div className="mt-1 font-mono text-[10px] tracking-[0.24em] text-muted-foreground uppercase">
                     {l}
                   </div>
-                </div>
+                </Reveal>
               ))}
             </div>
           </Reveal>
